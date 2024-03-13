@@ -1,0 +1,19 @@
+from django.shortcuts import render
+
+positions = [
+    {'id': 1, 'name': 'Резцы',' subname_1': 'THE FIRST NAME', 'subname_2': 'THE SECOND NAME', 'quan_1': 'FIRST QUAN', 'quan_2': 'SECOND QUAN'},
+    {'id': 2, 'name': 'Зубья', 'subname_1': 'THE FIRST NAME', 'subname_2': 'THE SECOND NAME', 'quan_1': 'FIRST QUAN', 'quan_2': 'SECOND QUAN'},
+    {'id': 3, 'name': 'Болты', 'subname_1': 'THE FIRST NAME', 'subname_2': 'THE SECOND NAME', 'quan_1': 'FIRST QUAN', 'quan_2': 'SECOND QUAN'},
+
+]
+
+
+def home(request):
+    context = {'positions: positions'}
+    return render(request, 'index.html',context)
+
+def catalog(request):
+    return render(request,'catalog.html')
+
+def item_page(request):
+    return render(request, 'item-page.html')
