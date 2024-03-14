@@ -67,6 +67,7 @@
         <div class="red-stripe"></div>
         <ul class="catalog__list container">
       {% for position in positions %}
+          <a href="/catalog/{{position.name}}">
           <li class="catalog__item">
             <img
               src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
@@ -94,6 +95,7 @@
             </table>
             <button class="buy-btn">Купить</button>
           </li>
+          </a>
       {% endfor %}
         </ul>
       </section>

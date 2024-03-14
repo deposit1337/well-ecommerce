@@ -18,8 +18,13 @@ def home(request):
     context = {'positions': positions}
     return render(request, 'index.html',context)
 
-def catalog(request):
-    return render(request,'catalog.html')
+def catalog(request,pk):
+    position = None
+    for i in positions:
+        if i['name'] == str(pk):
+            position = i
+    context = {'position': position}
+    return render(request,'catalog.html',context)
 
 def item_page(request):
     return render(request, 'item-page.html')
