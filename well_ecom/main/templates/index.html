@@ -63,8 +63,10 @@
       <!--  start catalog section -->
 
       <section class="catalog-section">
+
         <div class="red-stripe"></div>
         <ul class="catalog__list container">
+      {% for position in positions %}
           <li class="catalog__item">
             <img
               src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
@@ -73,17 +75,17 @@
 
             <table class="table-catalog">
               <caption class="Table-names caption-position">
-                Резцы
+                {{position.name}}
               </caption>
               <tbody class="body-position-fix">
                 <tr class="rows-position-fix">
-                  <td class="Table-item-names">Bandit</td>
-                  <td class="Table-item-names">1</td>
+                  <td class="Table-item-names">{{position.subname_1}}</td>
+                  <td class="Table-item-names">{{position.quan_1}}</td>
                   <td class="line-position"><div class="dotted-line"></div></td>
                 </tr>
                 <tr class="rows-position-fix">
-                  <td class="Table-item-names">Caterpillar</td>
-                  <td class="Table-item-names">4</td>
+                  <td class="Table-item-names">{{position.subname_2}}</td>
+                  <td class="Table-item-names">{{position.quan_2}}</td>
                   <td class="line-position2">
                     <div class="dotted-line"></div>
                   </td>
@@ -92,146 +94,7 @@
             </table>
             <button class="buy-btn">Купить</button>
           </li>
-          <li class="catalog__item">
-            <img
-              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
-              alt="grid-pic-1"
-            />
-
-            <table class="table-catalog">
-              <caption class="Table-names caption-position">
-                Зубья
-              </caption>
-              <tbody class="body-position">
-                <tr class="rows-position">
-                  <td class="Table-item-names">Bobcat</td>
-                  <td class="Table-item-names">1</td>
-                  <td class="line-position"><div class="dotted-line"></div></td>
-                </tr>
-                <tr class="rows-position">
-                  <td class="Table-item-names">Delta</td>
-                  <td class="Table-item-names">4</td>
-                  <td class="line-position2">
-                    <div class="dotted-line"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button class="buy-btn">Купить</button>
-          </li>
-          <li class="catalog__item">
-            <img
-              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
-              alt="grid-pic-1"
-            />
-
-            <table class="table-catalog">
-              <caption class="Table-names caption-position">
-                Болты
-              </caption>
-              <tbody class="body-position">
-                <tr class="rows-position">
-                  <td class="Table-item-names">FAE</td>
-                  <td class="Table-item-names">1</td>
-                  <td class="line-position"><div class="dotted-line"></div></td>
-                </tr>
-                <tr class="rows-position">
-                  <td class="Table-item-names">Ferri</td>
-                  <td class="Table-item-names">4</td>
-                  <td class="line-position2">
-                    <div class="dotted-line"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button class="buy-btn">Купить</button>
-          </li>
-        </ul>
-        <div class="grey-stripe"></div>
-        <ul class="catalog__list2">
-          <!-- start next 3 items in the catolog -->
-
-          <li class="catalog__item">
-            <img
-              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
-              alt="grid-pic-1"
-            />
-
-            <table class="table-catalog">
-              <caption class="Table-names caption-position">
-                Гусеницы
-              </caption>
-              <tbody class="body-position">
-                <tr class="rows-position">
-                  <td class="Table-item-names">Promac</td>
-                  <td class="Table-item-names">4</td>
-                  <td class="line-position"><div class="dotted-line"></div></td>
-                </tr>
-                <tr class="rows-position">
-                  <td class="Table-item-names">Osma</td>
-                  <td class="Table-item-names">9</td>
-                  <td class="line-position2">
-                    <div class="dotted-line"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button class="buy-btn">Купить</button>
-          </li>
-          <li class="catalog__item">
-            <img
-              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
-              alt="grid-pic-1"
-            />
-
-            <table class="table-catalog">
-              <caption class="Table-names caption-position">
-                Пружины
-              </caption>
-              <tbody class="body-position">
-                <tr class="rows-position">
-                  <td class="Table-item-names">Bandit</td>
-                  <td class="Table-item-names">2</td>
-                  <td class="line-position"><div class="dotted-line"></div></td>
-                </tr>
-                <tr class="rows-position">
-                  <td class="Table-item-names">Berti</td>
-                  <td class="Table-item-names">14</td>
-                  <td class="line-position2">
-                    <div class="dotted-line"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button class="buy-btn">Купить</button>
-          </li>
-          <li class="catalog__item">
-            <img
-              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
-              alt="grid-pic-1"
-            />
-
-            <table class="table-catalog">
-              <caption class="Table-names caption-position">
-                Пильные диски
-              </caption>
-              <tbody class="body-position-fix2">
-                <tr class="rows-position-fix">
-                  <td class="Table-item-names">Impulse</td>
-                  <td class="Table-item-names">3</td>
-                  <td class="line-position"><div class="dotted-line"></div></td>
-                </tr>
-                <tr class="rows-position-fix">
-                  <td class="Table-item-names">Loftiness</td>
-                  <td class="Table-item-names">2</td>
-                  <td class="line-position2">
-                    <div class="dotted-line"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button class="buy-btn">Купить</button>
-          </li>
+      {% endfor %}
         </ul>
       </section>
   {% endblock %}
