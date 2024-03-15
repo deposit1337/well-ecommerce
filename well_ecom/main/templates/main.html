@@ -1,15 +1,19 @@
-<!DOCTYPE html>
+<!--{% load static %}-->
+{% load static %}
+<!--<!DOCTYPE html>-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Well</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="main\styles\reset.css" />
-    <link rel="stylesheet" href="styles/hero.css" />
-    <link rel="stylesheet" href="styles/catalog.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/hero.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/catalog.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/description.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/catalog-category.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

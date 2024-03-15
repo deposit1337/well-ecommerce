@@ -66,8 +66,8 @@
 
         <div class="red-stripe"></div>
         <ul class="catalog__list container">
-      {% for position in positions %}
-          <a href="/catalog/{{position.name}}">
+<!--      {% for position in positions %}-->
+          <a href="{% url 'catalog' position.name %}">
           <li class="catalog__item">
             <img
               src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
@@ -76,17 +76,17 @@
 
             <table class="table-catalog">
               <caption class="Table-names caption-position">
-                {{position.name}}
+<!--                {{position.name}}-->
               </caption>
               <tbody class="body-position-fix">
                 <tr class="rows-position-fix">
-                  <td class="Table-item-names">{{position.subname_1}}</td>
-                  <td class="Table-item-names">{{position.quan_1}}</td>
+<!--                  <td class="Table-item-names">{{position.subname_1}}</td>-->
+<!--                  <td class="Table-item-names">{{position.quan_1}}</td>-->
                   <td class="line-position"><div class="dotted-line"></div></td>
                 </tr>
                 <tr class="rows-position-fix">
-                  <td class="Table-item-names">{{position.subname_2}}</td>
-                  <td class="Table-item-names">{{position.quan_2}}</td>
+<!--                  <td class="Table-item-names">{{position.subname_2}}</td>-->
+<!--                  <td class="Table-item-names">{{position.quan_2}}</td>-->
                   <td class="line-position2">
                     <div class="dotted-line"></div>
                   </td>
@@ -96,7 +96,7 @@
             <button class="buy-btn">Купить</button>
           </li>
           </a>
-      {% endfor %}
+<!--      {% endfor %}-->
         </ul>
       </section>
   {% endblock %}
