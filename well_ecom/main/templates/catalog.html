@@ -7,7 +7,7 @@
   <body>
     <main>
       {% block content %}
-      <a>{{position.name}}</a>
+
       <header class="header">
         <nav class="navigation">
           <ul class="navigation__list">
@@ -49,89 +49,95 @@
           <p class="pop-up instipe" >Наличие</p>
           <p class="pop-up instipe">Название машины</p>
         </div>
-          <p class="name-of-category ">Пильные зубья</p>
+          <p class="name-of-category ">{{category.name}}</p>
         </div>
       </div>
+
+
       <div class="container">
         <ul class="catalog__list-category">
+
+          {% for product in products %}
           <li class="catalog__item-category">
             <a href=""></a
             ><img
               class="image-category"
-              src="pics\d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"
+              src="{{category.image.url}}"
               alt=""
             />
-            <p class="category-item-name">Bandit</p>
-            <p class="index-of-item">#Q10233T</p>
+            <p class="category-item-name">{{product.brand_name}}</p>
+            <p class="index-of-item">{{product.vendor}}</p>
             <p class="price">
-              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />
+              {{product.price}} <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />
             </p>
           </li>
-          <li class="catalog__item-category">
-            <a href=""> </a
-            ><img
-              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"
-              alt=""
-              class="image-category"
-            />
-            <p class="category-item-name">Bandit</p>
-            <p class="index-of-item">#Q10233T</p>
-            <p class="price">
-              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />
-            </p>
-          </li>
-          <li class="catalog__item-category">
-            <a href=""></a
-            ><img
-              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"
-              alt=""
-              class="image-category"
-            />
-            <p class="category-item-name">Bandit</p>
-            <p class="index-of-item">#Q10233T</p>
-            <p class="price">
-              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />
-            </p>
-          </li>
-          <li class="catalog__item-category">
-            <a href=""></a
-            ><img
-              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"
-              alt=""
-              class="image-category"
-            />
-            <p class="category-item-name">Bandit</p>
-            <p class="index-of-item">#Q10233T</p>
-            <p class="price">
-              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />
-            </p>
-          </li>
-          <li class="catalog__item-category">
-            <a href=""></a
-            ><img
-              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"
-              alt=""
-              class="image-category"
-            />
-            <p class="category-item-name">Bandit</p>
-            <p class="index-of-item">#Q10233T</p>
-            <p class="price">
-              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />
-            </p>
-          </li>
-          <li class="catalog__item-category">
-            <a href=""></a
-            ><img
-              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"
-              alt=""
-              class="image-category"
-            />
-            <p class="category-item-name">Bandit</p>
-            <p class="index-of-item">#Q10233T</p>
-            <p class="price">
-              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />
-            </p>
-          </li>
+
+          {% endfor %}
+<!--          <li class="catalog__item-category">-->
+<!--            <a href=""> </a-->
+<!--            ><img-->
+<!--              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"-->
+<!--              alt=""-->
+<!--              class="image-category"-->
+<!--            />-->
+<!--            <p class="category-item-name">Bandit</p>-->
+<!--            <p class="index-of-item">#Q10233T</p>-->
+<!--            <p class="price">-->
+<!--              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />-->
+<!--            </p>-->
+<!--          </li>-->
+<!--          <li class="catalog__item-category">-->
+<!--            <a href=""></a-->
+<!--            ><img-->
+<!--              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"-->
+<!--              alt=""-->
+<!--              class="image-category"-->
+<!--            />-->
+<!--            <p class="category-item-name">Bandit</p>-->
+<!--            <p class="index-of-item">#Q10233T</p>-->
+<!--            <p class="price">-->
+<!--              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />-->
+<!--            </p>-->
+<!--          </li>-->
+<!--          <li class="catalog__item-category">-->
+<!--            <a href=""></a-->
+<!--            ><img-->
+<!--              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"-->
+<!--              alt=""-->
+<!--              class="image-category"-->
+<!--            />-->
+<!--            <p class="category-item-name">Bandit</p>-->
+<!--            <p class="index-of-item">#Q10233T</p>-->
+<!--            <p class="price">-->
+<!--              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />-->
+<!--            </p>-->
+<!--          </li>-->
+<!--          <li class="catalog__item-category">-->
+<!--            <a href=""></a-->
+<!--            ><img-->
+<!--              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"-->
+<!--              alt=""-->
+<!--              class="image-category"-->
+<!--            />-->
+<!--            <p class="category-item-name">Bandit</p>-->
+<!--            <p class="index-of-item">#Q10233T</p>-->
+<!--            <p class="price">-->
+<!--              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />-->
+<!--            </p>-->
+<!--          </li>-->
+<!--          <li class="catalog__item-category">-->
+<!--            <a href=""></a-->
+<!--            ><img-->
+<!--              src="pics/d0bf12_7a82601dad2f4520b5450ee5e8b44b5d~mv2 2test-pic11.png"-->
+<!--              alt=""-->
+<!--              class="image-category"-->
+<!--            />-->
+<!--            <p class="category-item-name">Bandit</p>-->
+<!--            <p class="index-of-item">#Q10233T</p>-->
+<!--            <p class="price">-->
+<!--              2489 <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />-->
+<!--            </p>-->
+<!--          </li>-->
         </ul>
       </div>
       </section>
