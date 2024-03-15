@@ -1,38 +1,71 @@
 {% extends 'main.html' %}
 
+
 <!--<!DOCTYPE html>-->
 <html lang="en">
-<!--  <head>-->
-<!--    <meta charset="UTF-8" />-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
-<!--    <title>Well</title>-->
-<!--    <link rel="stylesheet" href="style.css" />-->
-<!--    <link rel="stylesheet" href="styles/reset.css" />-->
-<!--    <link rel="stylesheet" href="main\styles\reset.css" />-->
-<!--    <link rel="stylesheet" href="styles/hero.css" />-->
-<!--    <link rel="stylesheet" href="styles/catalog.css" />-->
-<!--    <link rel="stylesheet" href="styles/footer.css" />-->
-<!--    <link rel="preconnect" href="https://fonts.googleapis.com" />-->
-<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />-->
-<!--    <link-->
-<!--      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap"-->
-<!--      rel="stylesheet"-->
-<!--    />-->
-<!--    <link rel="preconnect" href="https://fonts.googleapis.com" />-->
-<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />-->
-<!--    <link-->
-<!--      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"-->
-<!--      rel="stylesheet"-->
-<!--    />-->
-<!--  </head>-->
-<!--  -->
-<!--  {% include 'fixed/navbar.html' %}-->
-<!--&lt;!&ndash;    &ndash;&gt;-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Well</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/catalog.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  {% block content %}
-<body>
- <main>
+
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a class="navigation__link" href="" title="logo"
+              ><img
+                id="logo-well"
+                src="/pictures/logo-black.svg"
+                alt="logo well"
+            /></a>
+          </li>
+          <div class="img-container">
+            <li class="navigation__item">
+              <a class="navigation__link" href="" title="search"
+                ><img
+                  src="pictures/search_icon.svg"
+                  alt="search icon"
+                  height="32"
+                  width="32"
+              /></a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="" title="cart"
+                ><img
+                  src="pictures/Vectorcart-2.svg"
+                  alt="cart icon"
+                  height="32"
+                  width="32"
+              /></a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
       <!-- start header -->
+          {% block content %}
       <section class="hero-sec">
         <h1 id="title-in-hero" class="Title">Канадское качество</h1>
         <ul class="carousel__list container">
@@ -59,34 +92,33 @@
           <h3 class="carousel__item-name">РЕЗЕЦ AGRIMASTER</h3>
         </div>
       </section>
-
       <!--  start catalog section -->
 
       <section class="catalog-section">
-
         <div class="red-stripe"></div>
         <ul class="catalog__list container">
-<!--      {% for position in positions %}-->
-          <a href="{% url 'catalog' position.name %}">
+
+          {% for category in categories_red %}
+          <a href="{% url 'category_products' category.slug %}">
           <li class="catalog__item">
             <img
-              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"
+              src="{{category.image.url}}"
               alt="grid-pic-1"
             />
 
             <table class="table-catalog">
               <caption class="Table-names caption-position">
-<!--                {{position.name}}-->
+                {{category.name}}
               </caption>
               <tbody class="body-position-fix">
                 <tr class="rows-position-fix">
-<!--                  <td class="Table-item-names">{{position.subname_1}}</td>-->
-<!--                  <td class="Table-item-names">{{position.quan_1}}</td>-->
+                  <td class="Table-item-names">{{category.brand_name_1}}</td>
+                  <td class="Table-item-names">{{category.quantity_1}}</td>
                   <td class="line-position"><div class="dotted-line"></div></td>
                 </tr>
                 <tr class="rows-position-fix">
-<!--                  <td class="Table-item-names">{{position.subname_2}}</td>-->
-<!--                  <td class="Table-item-names">{{position.quan_2}}</td>-->
+                  <td class="Table-item-names">{{category.brand_name_2}}</td>
+                  <td class="Table-item-names">{{category.quantity_2}}</td>
                   <td class="line-position2">
                     <div class="dotted-line"></div>
                   </td>
@@ -96,42 +128,182 @@
             <button class="buy-btn">Купить</button>
           </li>
           </a>
-<!--      {% endfor %}-->
+          {% endfor %}
+<!--          <li class="catalog__item">-->
+<!--            <img-->
+<!--              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"-->
+<!--              alt="grid-pic-1"-->
+<!--            />-->
+
+<!--            <table class="table-catalog">-->
+<!--              <caption class="Table-names caption-position">-->
+<!--                Зубья-->
+<!--              </caption>-->
+<!--              <tbody class="body-position">-->
+<!--                <tr class="rows-position">-->
+<!--                  <td class="Table-item-names">Bobcat</td>-->
+<!--                  <td class="Table-item-names">1</td>-->
+<!--                  <td class="line-position"><div class="dotted-line"></div></td>-->
+<!--                </tr>-->
+<!--                <tr class="rows-position">-->
+<!--                  <td class="Table-item-names">Delta</td>-->
+<!--                  <td class="Table-item-names">4</td>-->
+<!--                  <td class="line-position2">-->
+<!--                    <div class="dotted-line"></div>-->
+<!--                  </td>-->
+<!--                </tr>-->
+<!--              </tbody>-->
+<!--            </table>-->
+<!--            <button class="buy-btn">Купить</button>-->
+<!--          </li>-->
+<!--          <li class="catalog__item">-->
+<!--            <img-->
+<!--              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"-->
+<!--              alt="grid-pic-1"-->
+<!--            />-->
+
+<!--            <table class="table-catalog">-->
+<!--              <caption class="Table-names caption-position">-->
+<!--                Болты-->
+<!--              </caption>-->
+<!--              <tbody class="body-position">-->
+<!--                <tr class="rows-position">-->
+<!--                  <td class="Table-item-names">FAE</td>-->
+<!--                  <td class="Table-item-names">1</td>-->
+<!--                  <td class="line-position"><div class="dotted-line"></div></td>-->
+<!--                </tr>-->
+<!--                <tr class="rows-position">-->
+<!--                  <td class="Table-item-names">Ferri</td>-->
+<!--                  <td class="Table-item-names">4</td>-->
+<!--                  <td class="line-position2">-->
+<!--                    <div class="dotted-line"></div>-->
+<!--                  </td>-->
+<!--                </tr>-->
+<!--              </tbody>-->
+<!--            </table>-->
+<!--            <button class="buy-btn">Купить</button>-->
+<!--          </li>-->
+        </ul>
+        <div class="grey-stripe"></div>
+        <ul class="catalog__list2">
+          <!-- start next 3 items in the catolog -->
+          {% for category in categories_grey %}
+          <a href="{% url 'category_products' category.slug %}">
+          <li class="catalog__item">
+            <img
+              src="{{category.image.url}}"
+              alt="grid-pic-1"
+            />
+
+            <table class="table-catalog">
+              <caption class="Table-names caption-position">
+                {{category.name}}
+              </caption>
+              <tbody class="body-position">
+                <tr class="rows-position">
+                  <td class="Table-item-names">{{category.brand_name_1}}</td>
+                  <td class="Table-item-names">{{category.quantity_1}}</td>
+                  <td class="line-position"><div class="dotted-line"></div></td>
+                </tr>
+                <tr class="rows-position">
+                  <td class="Table-item-names">{{category.brand_name_2}}</td>
+                  <td class="Table-item-names">{{category.quantity_2}}</td>
+                  <td class="line-position2">
+                    <div class="dotted-line"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="buy-btn">Купить</button>
+          </li>
+          </a>
+          {% endfor %}
+<!--          <li class="catalog__item">-->
+<!--            <img-->
+<!--              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"-->
+<!--              alt="grid-pic-1"-->
+<!--            />-->
+
+<!--            <table class="table-catalog">-->
+<!--              <caption class="Table-names caption-position">-->
+<!--                Пружины-->
+<!--              </caption>-->
+<!--              <tbody class="body-position">-->
+<!--                <tr class="rows-position">-->
+<!--                  <td class="Table-item-names">Bandit</td>-->
+<!--                  <td class="Table-item-names">2</td>-->
+<!--                  <td class="line-position"><div class="dotted-line"></div></td>-->
+<!--                </tr>-->
+<!--                <tr class="rows-position">-->
+<!--                  <td class="Table-item-names">Berti</td>-->
+<!--                  <td class="Table-item-names">14</td>-->
+<!--                  <td class="line-position2">-->
+<!--                    <div class="dotted-line"></div>-->
+<!--                  </td>-->
+<!--                </tr>-->
+<!--              </tbody>-->
+<!--            </table>-->
+<!--            <button class="buy-btn">Купить</button>-->
+<!--          </li>-->
+<!--          <li class="catalog__item">-->
+<!--            <img-->
+<!--              src="pictures/catalog-pictures-index/grid-pics/grid-1.png"-->
+<!--              alt="grid-pic-1"-->
+<!--            />-->
+<!--            <table class="table-catalog">-->
+<!--              <caption class="Table-names caption-position">-->
+<!--                Пильные диски-->
+<!--              </caption>-->
+<!--              <tbody class="body-position-fix2">-->
+<!--                <tr class="rows-position-fix">-->
+<!--                  <td class="Table-item-names">Impulse</td>-->
+<!--                  <td class="Table-item-names">3</td>-->
+<!--                  <td class="line-position"><div class="dotted-line"></div></td>-->
+<!--                </tr>-->
+<!--                <tr class="rows-position-fix">-->
+<!--                  <td class="Table-item-names">Loftiness</td>-->
+<!--                  <td class="Table-item-names">2</td>-->
+<!--                  <td class="line-position2">-->
+<!--                    <div class="dotted-line"></div>-->
+<!--                  </td>-->
+<!--                </tr>-->
+<!--              </tbody>-->
+<!--            </table>-->
+<!--            <button class="buy-btn">Купить</button>-->
+<!--          </li>-->
         </ul>
       </section>
-  {% endblock %}
+  {% endblock content %}
       <!-- start footer -->
-
-<!--      <footer>-->
-<!--        <img-->
-<!--          class="logo-well-footer"-->
-<!--          src="pictures/catalog-pictures-index/footer-logo.svg"-->
-<!--          alt="logo well"-->
-<!--        />-->
-<!--        <p class="credits">-->
-<!--          Designed and built with all the love in the world by the-->
-<!--          <span class="Deposit-link"-->
-<!--            ><a class="deposit" href="">Deposit</a> </span-->
-<!--          >. <span class="licensed">Code licensed</span>-->
-<!--          <a class="MIT-link" href="">MIT.</a>-->
-<!--        </p>-->
-<!--        <div class="forms-container">-->
-<!--          <span class="contact-form"><p>Задать вопрос</p></span>-->
-<!--          <div class="contact-positon">-->
-<!--            <span class="contact-num"-->
-<!--              ><img-->
-<!--                class="call"-->
-<!--                src="pictures/catalog-pictures-index/phone.svg"-->
-<!--                alt="call us"-->
-<!--            /></span>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="darken-coat">-->
-<!--          <p class="copyrights">© Well, Russia. Все права защищены.</p>-->
-<!--        </div>-->
-<!--      </footer>-->
-
+      <footer>
+        <img
+          class="logo-well-footer"
+          src="pictures/catalog-pictures-index/footer-logo.svg"
+          alt="logo well"
+        />
+        <p class="credits">
+          Designed and built with all the love in the world by the
+          <span class="Deposit-link"
+            ><a class="deposit" href="">Deposit</a> </span
+          >. <span class="licensed">Code licensed</span>
+          <a class="MIT-link" href="">MIT.</a>
+        </p>
+        <div class="forms-container">
+          <span class="contact-form"><p>Задать вопрос</p></span>
+          <div class="contact-positon">
+            <span class="contact-num"
+              ><img
+                class="call"
+                src="pictures/catalog-pictures-index/phone.svg"
+                alt="call us"
+            /></span>
+          </div>
+        </div>
+        <div class="darken-coat">
+          <p class="copyrights">© Well, Russia. Все права защищены.</p>
+        </div>
+      </footer>
     </main>
   </body>
-<!--  <script></script>-->
+  <script></script>
 </html>
