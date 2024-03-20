@@ -1,0 +1,76 @@
+.hero-sec {
+  background-image: url(/pictures/concrete-well.jpeg);
+  height: 700px;
+  padding-top: 100px;
+}
+
+#title-in-hero {
+  color: var(--Black);
+  text-align: center;
+  text-shadow: 0px 3.4831199645996094px 3.4831199645996094px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+.carousel__item-selected {
+  display: flex;
+  width: 291.845px;
+  height: 291.845px;
+  padding: 23.176px 37.768px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 13.663px;
+  border: 0.858px solid var(--Black-75, rgba(72, 72, 72, 0.75));
+  background: rgba(231, 231, 231, 0.747);
+  box-shadow: 0px 3.48312px 3.48312px 0px rgba(0, 0, 0, 0.25);
+  margin-inline: 56px;
+}
+
+.carousel__item {
+  display: flex;
+  width: 171.674px;
+  height: 171.674px;
+  padding: 33.476px 28.326px 32.618px 28.326px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 13.663px;
+  border: 0.858px solid var(--Black-75, rgba(72, 72, 72, 0.75));
+  background: rgba(242, 242, 242, 0.7);
+  filter: blur(0.8707799911499023px);
+  box-shadow: 0px 3.48312px 3.48312px 0px rgba(0, 0, 0, 0.25);
+}
+
+.carousel__list {
+  padding-top: 24px;
+}
+
+.carousel-status {
+  padding-bottom: 38px;
+  padding-top: 28px;
+}
+
+.red-cloak {
+    margin-top: -10px;
+  height: 50.483px;
+
+  
+  flex-shrink: 0;
+
+  background-color: rgba(219, 0, 0, 0.3);
+  /* padding-top: 84px; */
+}
+
+.carousel__item-name{
+    color: var(--Black);
+text-align: center;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-family: Roboto Condensed;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 60px; /* 187.5% */
+}

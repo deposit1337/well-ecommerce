@@ -55,24 +55,19 @@
 
 
       <div class="container">
-        <ul class="catalog__list-category">
 
-          {% for product in products %}
-          <li class="catalog__item-category">
-            <a href=""></a
-            ><img
-              class="image-category"
-              src="{{category.image.url}}"
-              alt=""
-            />
-            <p class="category-item-name">{{product.brand_name}}</p>
-            <p class="index-of-item">{{product.vendor}}</p>
-            <p class="price">
-              {{product.price}} <img src="pics\ruble-svg.svg" alt="" class="image-ruble" />
-            </p>
-          </li>
+  <ul class="catalog__list-category">
+{% for product in products %}
 
-          {% endfor %}
+  <a href="{% url 'product_details' product_vendor=product.vendor category_slug=category.slug product_id=product.id %}">
+    <li class="catalog__item-category">
+        <img class="image-category" src="{{ category.image.url }}" alt=""/>
+        <p class="category-item-name">{{ product.brand_name }}</p>
+        <p class="index-of-item">{{ product.vendor }}</p>
+        <p class="price">{{ product.price }} <img src="pics\ruble-svg.svg" alt="" class="image-ruble" /></p>
+    </li>
+  </a>
+{% endfor %}
 <!--          <li class="catalog__item-category">-->
 <!--            <a href=""> </a-->
 <!--            ><img-->

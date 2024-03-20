@@ -6,45 +6,13 @@
   <body>
   {%block content%}
     <main>
-      <header class="header">
-        <nav class="navigation">
-          <ul class="navigation__list">
-            <li class="navigation__item">
-              <a class="navigation__link" href="" title="logo"
-                ><img id="logo-well" src="/pics/logo-black.svg" alt="logo well
-                style="filter: invert(1); /></a
-              >
-            </li>
-            <div class="img-container">
-              <li class="navigation__item">
-                <a class="navigation__link" href="" title="search"
-                  ><img
-                    src="pics/search_icon.svg"
-                    alt="search icon"
-                    height="32"
-                    width="32"
-                /></a>
-              </li>
-              <li class="navigation__item">
-                <a class="navigation__link" href="" title="cart"
-                  ><img
-                    src="pics/Vectorcart-2.svg"
-                    alt="cart icon"
-                    height="32"
-                    width="32"
-                /></a>
-              </li>
-            </div>
-          </ul>
-        </nav>
-      </header>
-
+      {% include 'fixed/navbar.html' %}
       <p class="bottom-nav">
         Главная | <a href="" class="bottom-nav">Зубья</a> |
         <a href="" class="nav-link">BEAVER</a>
       </p>
       <!-- start item name -->
-      <h4 class="item-name">Комплект зубьев(18шт.) Beaver</h4>
+      <h4 class="item-name">{{postition.full_name_dics}}</h4>
       <div class="item-img-container">
         <img
           src="pics/trial.png"
@@ -138,8 +106,8 @@
           />
         </div>
       </div>
-      <p class="vendor"><span class="param">Артикул:</span> #Q10233T</p>
-      <p class="attr"><span class="param">Цена:</span>2489.99</p>
+      <p class="vendor"><span class="param">Артикул:</span> {{product_vendor.vendor}}</p>
+      <p class="attr"><span class="param">Цена:</span>{{product_vendor.price}}</p>
       <div class="ruble-svg"></div>
       <span class="quantity">Количество</span>
       <div class="btn-more"></div>
@@ -151,9 +119,7 @@
       >
       <div style="width: 501px; height: 162px">
         <h6 class="description">
-          <br />Резец с двумя твердосплавными наконечниками/напайками, крепится
-          одним болтом. Резец мульчерный <b>RM4501</b
-          ><span> устанавливается на мульчеры BANDIT.<br /><br /></span>
+          {{product_vendor.description}}
         </h6>
       </div>
       <p class="attr">Состав комплекта:</p>

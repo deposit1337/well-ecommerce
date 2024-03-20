@@ -36,8 +36,18 @@ class Product(models.Model):
     price = models.DecimalField(default=0, decimal_places=2, max_digits=7)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1, related_name='products_category')
     description = models.CharField(max_length=250, default='', blank=True, null=True)
+    full_name_decs = models.CharField(max_length=100,default='')
 
     image = models.ImageField(upload_to='uploads/product/',default='well_ecom/media/uploads/product/default.png')
 
     def __str__(self):
         return self.brand_name
+
+
+class ProductImages(models.Model):
+    product = models.ForeignKey(Product,related_name='images',on_delete=models.CASCADE)
+    image_1 = models.ImageField(upload_to='uploads/product/product-decs/',default='well_ecom/media/uploads/product/default.png')
+    image_2 = models.ImageField(upload_to='uploads/product/product-decs/',
+                                default='well_ecom/media/uploads/product/default.png')
+    image_3 = models.ImageField(upload_to='uploads/product/product-decs/',
+                                default='well_ecom/media/uploads/product/default.png')

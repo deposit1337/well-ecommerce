@@ -13,7 +13,7 @@ from django.shortcuts import render
 # {'id': 6, 'name': 'Пильные диски', 'subname_1': 'THE FIRST NAME', 'subname_2': 'THE SECOND NAME', 'quan_1': 'FIRST QUAN', 'quan_2': 'SECOND QUAN'},
 # ]
 
-from .models import Category,Product
+from .models import Category,Product,ProductImages
 
 
 
@@ -37,3 +37,11 @@ def category_products(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
     products = Product.objects.filter(category=category)
     return render(request, 'catalog.html', {'category': category, 'products': products})
+
+
+def product_details(request, product_vendor,category_slug,product_id):
+    category = get_object_or_404(Category, slug=category_slug)
+    id = get_object_or_404(Product,id=product_id)
+    vendor = get_object_or_404(Product, vendor=product_vendor)
+    product_info = Product.objects.all()
+    return render(request,'item-page.html', {'product_vendor': vendor, 'product_info': product_info, 'id': id, 'category': category})
